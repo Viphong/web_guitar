@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Shared_Layout.cshtml";
+}
+<!-- Primary left -->
+<div id="primary-left">
+    <!-- Blank page -->
+    <div class="blank-page-container">
+        <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=hr&amp;geocode=&amp;q=Vukovar,+Hrvatska&amp;aq=0&amp;oq=vukovar&amp;sll=35.817813,-58.007812&amp;sspn=48.53882,105.820313&amp;ie=UTF8&amp;hq=&amp;hnear=Vukovar,+Vukovarsko-srijemska+%C5%BEupanija,+Hrvatska&amp;t=m&amp;ll=45.343941,19.009438&amp;spn=0.084456,0.281525&amp;z=12&amp;output=embed"></iframe>
+        <h5>Contact us</h5>
+        <p class="subheader">The form includes jQuery validation script to make user experience better and if fully functional. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non nunc ac quam congue fermentum et vel massa.</p>
+        <hr>
+        <!-- Contact page -->
+        <div id="contact">
+            <div id="message"></div>
+            <form method="post" action="http://codeostudio.hr/premium/themeforest/imagpress/php/contact.php" name="contactform" id="contactform">
+                <div id="contact-input">
+                    <div>
+                        <label for="name">Name</label>
+                        <input name="name" type="text" id="name" value="">
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input name="email" type="text" id="email" value="">
+                    </div>
+                </div>
+                <div id="contact-message">
+                    <label for="comments">Message</label>
+                    <textarea name="comments" type="text" id="comments" value=""></textarea>
+                </div>
+                <div id="contact-human">
+                    <p>Confirm that you are human!</p>
+                </div>
+                <div id="contact-submit">
+                    <input type="submit" class="submit" id="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Sidebar -->
+<div id="sidebar">
+    <!-- Text widget -->
+    <div class="widget">
+        <h3 class="widget-title">About iMagPress</h3>
+        <div class="widget-text">
+            <p>iMagPress is responsive magazine theme with great user experience, both desktop and mobile with solid code and awesome usability.</p>
+        </div>
+    </div>
+    <!-- Flickr -->
+    <div class="widget">
+        <h3 class="widget-title">Flickr <span><a href="http://www.flickr.com/" target="_blank"><i class="icon-flickr"></i></a></span></h3>
+        <ul class="widget-flickr"></ul>
+    </div>
+</div>
