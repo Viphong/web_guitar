@@ -1,17 +1,316 @@
 ﻿
 @{
-    Layout = null;
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Shared_layout.cshtml";
+    var listnewVideo = (List<Models.Framework.Video>)ViewBag.NewVideo;
+}
+@Html.Partial("~/Views/Home/MainSliderPartial.cshtml")
+ <!-- Primary left -->
+<div id="primary-left">
+    @foreach (var item in listnewVideo)
+    {
+          
+        var url = "/video/" + @item.MetaTitle + "/" + @item.Mavideo;
+        <!-- Article standard -->
+        <div class="article-standard">
+            <div class="post-video">
+                <div class="fluid-width-video-wrapper" style="padding-top: 85.7143%;">
+                <iframe src="@item.Link" ></iframe>
+                </div>
+            </div>
+            <div class="entry-content">
+                <h1 class="entry-title"><a href="@url">@item.Tenvideo</a></h1>
+                <div class="entry-meta">
+                    <div class="review-stars">
+                        <span class="star-full"></span>
+                        <span class="star-full"></span>
+                        <span class="star-full"></span>
+                        <span class="star-full"></span>
+                        <span class="star-full"></span>
+                    </div>
+                    <div class="description-em">
+                        <span class="by-view-number">132</span>
+                        <span class="by-date">1 day ago</span>
+                        <span class="by-comments"><a href="#">42</a></span>
+                    </div>
+                </div>
+                <p>Hooking up with Double Identity for another sic collab shoe. The last one already rockin these new ones out and about. Eget nunc nunc.</p>
+                <a href="@url" class="read-more">Read more</a>
+                <span class="format-post"><i class="icon-play-sign"></i></span>
+            </div>
+        </div>
+    }
+    
+    <!-- Clear floating div -->
+    <div class="clear"></div>
+</div>
+<!-- sidebar -->
+<div id="sidebar">
+    <!-- Social profile -->
+    <div class="widget no-bg">
+        <ul class="widget-social-profile">
+            <li class="twitter">
+                <a href="#">
+                    <i class="icon-twitter"></i>
+                    <strong>29,272</strong>
+                    <span>followers</span>
+                </a>
+            </li>
+            <li class="facebook">
+                <a href="#">
+                    <i class="icon-facebook"></i>
+                    <strong>6,072</strong>
+                    <span>fans</span>
+                </a>
+            </li>
+            <li class="rss">
+                <a href="#">
+                    <i class="icon-rss"></i>
+                    <strong>112,054</strong>
+                    <span>subscribers</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- Slider -->
+    <div class="widget">
+        <div class="widget-slider">
+            <div class="bx-wrapper" style="max-width: 100%; margin: 0px auto;">
+                <div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 200px;">
+                    <ul style="width: 515%; position: relative; transition-duration: 0s; transform: translate3d(-300px, 0px, 0px);">
+                        <li style="float: left; list-style: none; position: relative; width: 300px;" class="bx-clone">
+                            <a href="#">
+                                <img src="~/Content/img/posts/quad_post_6.jpg" alt="Image" title="Woow - caption!">
+                            </a><div class="bx-caption"><span>Woow - caption!</span></div>
+                        </li>
+                        <li style="float: left; list-style: none; position: relative; width: 300px;">
+                            <a href="#">
+                                <img src="~/Content/img/posts/quad_post_5.jpg" alt="Image" title="This is title caption">
+                            </a><div class="bx-caption"><span>This is title caption</span></div>
+                        </li>
+                        <li style="float: left; list-style: none; position: relative; width: 300px;">
+                            <a href="#">
+                                <img src="~/Content/img/posts/quad_post_2.jpg" alt="Image" title="Another caption">
+                            </a><div class="bx-caption"><span>Another caption</span></div>
+                        </li>
+                        <li style="float: left; list-style: none; position: relative; width: 300px;">
+                            <a href="#">
+                                <img src="~/Content/img/posts/quad_post_6.jpg" alt="Image" title="Woow - caption!">
+                            </a><div class="bx-caption"><span>Woow - caption!</span></div>
+                        </li>
+                        <li style="float: left; list-style: none; position: relative; width: 300px;" class="bx-clone">
+                            <a href="#">
+                                <img src="~/Content/img/posts/quad_post_5.jpg" alt="Image" title="This is title caption">
+                            </a><div class="bx-caption"><span>This is title caption</span></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bx-controls bx-has-controls-direction">
+                    <div class="bx-controls-direction"><a class="bx-prev" href=""></a><a class="bx-next" href=""></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Latest reviews -->
+    <div class="widget">
+        <h3 class="widget-title">Latest Post</h3>
+        <ul class="widget-latest-reviews">
+            <li>
+                <a href="#">
+                    <img src="img/sidebar/post_1.jpg" alt="Post">
+                </a>
+                <h3><a href="#">Donec ut consequat nec viverra scelerisqu</a></h3>
+                <div class="entry-review">
+                    <div class="review-stars">
+                        <span class="star-full"></span>
+                        <span class="star-full"></span>
+                        <span class="star-full"></span>
+                        <span class="star-full"></span>
+                        <span class="star-empty"></span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="~/Content/img/posts/blog_small_3.jpg" alt="Post">
+                </a>
+                <h3><a href="#">Donec ut consequat nec viverra scelerisqu</a></h3>
+                <div class="entry-review">
+                    <div class="review-stars">
+                        <span class="star-full"></span>
+                        <span class="star-full"></span>
+                        <span class="star-full"></span>
+                        <span class="star-full"></span>
+                        <span class="star-empty"></span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="~/Content/img/posts/travel_small_2.jpg" alt="Post">
+                </a>
+                <h3><a href="#">Donec ut consequat nec viverra scelerisqu</a></h3>
+                <div class="entry-review">
+                    <div class="review-stars">
+                        <span class="star-full"></span>
+                        <span class="star-full"></span>
+                        <span class="star-full"></span>
+                        <span class="star-full"></span>
+                        <span class="star-empty"></span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="~/Content/img/posts/fashion_small_1.jpg" alt="Post">
+                </a>
+                <h3><a href="#">Donec ut consequat nec viverra scelerisqu</a></h3>
+                <div class="entry-review">
+                    <div class="review-stars">
+                        <span class="star-full"></span>
+                        <span class="star-full"></span>
+                        <span class="star-full"></span>
+                        <span class="star-full"></span>
+                        <span class="star-empty"></span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- Category -->
+   @{Html.RenderAction("tunesCategory", "Home");}
+    <!-- Ad 300x250 -->
+    <div class="widget">
+        <h3 class="widget-title">Advertising 300x250</h3>
+        <div class="widget-300x250ad">
+            <img src="~/Content/img/banners/300x250.gif" alt="Image">
+        </div>
+    </div>
+</div>
+@section Featured_Carousel{
+ <!-- Featured carousel -->
+<div id="carousel-container">
+    <div id="featured-carousel">
+        <!-- Article carousel -->
+        <div class="article-standard">
+            <div class="post-image">
+                <img src="~/Assets/client/images/posts/blog_post_3.jpg" />
+                <ol class="social-links">
+                    <li><a href="#"><i class="icon-link"></i></a></li>
+                    <li><a href="~/Content/img/posts/blog_post_3.jpg" rel="lightbox"><i class="icon-search"></i></a></li>
+                </ol>
+            </div>
+            <div class="entry-content">
+                <h1 class="entry-title"><a href="#">Creators launch new project on Kickstarter</a></h1>
+                <div class="review-stars">
+                    <span class="star-full"></span>
+                    <span class="star-full"></span>
+                    <span class="star-full"></span>
+                    <span class="star-half"></span>
+                    <span class="star-empty"></span>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <a href="#" class="read-more">Read more</a>
+                <div class="entry-meta">
+                    <span class="by-category"><a href="#">Fashion</a></span>
+                    <span class="by-comments"><a href="#">13</a></span>
+                </div>
+            </div>
+        </div>
+        <!-- Article carousel -->
+        <div class="article-standard">
+            <div class="post-image">
+                <img src="~/Assets/client/images/posts/blog_post_1.jpg" alt="Post" />
+                <ol class="social-links">
+                    <li><a href="#"><i class="icon-link"></i></a></li>
+                    <li><a href="~/Content/img/posts/blog_post_1.jpg" rel="lightbox"><i class="icon-search"></i></a></li>
+                </ol>
+            </div>
+            <div class="entry-content">
+                <h1 class="entry-title"><a href="#">Nam mattis nisi neque vulputate auctor</a></h1>
+                <div class="review-stars">
+                    <span class="star-full"></span>
+                    <span class="star-full"></span>
+                    <span class="star-full"></span>
+                    <span class="star-half"></span>
+                    <span class="star-empty"></span>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <a href="#" class="read-more">Read more</a>
+                <div class="entry-meta">
+                    <span class="by-category"><a href="#">Fashion</a></span>
+                    <span class="by-comments"><a href="#">13</a></span>
+                </div>
+            </div>
+        </div>
+        <!-- Article carousel -->
+        <div class="article-standard">
+            <div class="post-image">
+                <img src="~/Assets/client/images/posts/blog_post_2.jpg" alt="Post" />
+                <ol class="social-links">
+                    <li><a href="#"><i class="icon-link"></i></a></li>
+                    <li><a href="~/Content/img/posts/blog_post_2.jpg" rel="lightbox"><i class="icon-search"></i></a></li>
+                </ol>
+            </div>
+            <div class="entry-content">
+                <h1 class="entry-title"><a href="#">Fusce tellus nisi, semper et erat et accumsan</a></h1>
+                <div class="review-stars">
+                    <span class="star-full"></span>
+                    <span class="star-full"></span>
+                    <span class="star-full"></span>
+                    <span class="star-half"></span>
+                    <span class="star-empty"></span>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <a href="#" class="read-more">Read more</a>
+                <div class="entry-meta">
+                    <span class="by-category"><a href="#">Fashion</a></span>
+                    <span class="by-comments"><a href="#">13</a></span>
+                </div>
+            </div>
+        </div>
+        <!-- Article carousel -->
+        <div class="article-standard">
+            <div class="post-image">
+                <img src="~/Assets/client/images/posts/blog_post_4.jpg" alt="Post" />
+                <ol class="social-links">
+                    <li><a href="#"><i class="icon-link"></i></a></li>
+                    <li><a href="~/Content/img/posts/blog_post_4.jpg" rel="lightbox"><i class="icon-search"></i></a></li>
+                </ol>
+            </div>
+            <div class="entry-content">
+                <h1 class="entry-title"><a href="#">Donec dignissim sit amet justo a egestas</a></h1>
+                <div class="review-stars">
+                    <span class="star-full"></span>
+                    <span class="star-full"></span>
+                    <span class="star-full"></span>
+                    <span class="star-half"></span>
+                    <span class="star-empty"></span>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <a href="#" class="read-more">Read more</a>
+                <div class="entry-meta">
+                    <span class="by-category"><a href="#">Fashion</a></span>
+                    <span class="by-comments"><a href="#">13</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+}
+@section Pagination{
+    <!-- Pagination -->
+    <div class="container">
+        <!-- Clear floating div -->
+        <div class="clear"></div>
+        <ul class="pagination col3">
+            <li class="prev disabled">PREV</li>
+            <li class="current">1</li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li class="next"><a href="#">NEXT</a></li>
+        </ul>
+    </div>
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <div> 
-    </div>
-</body>
-</html>

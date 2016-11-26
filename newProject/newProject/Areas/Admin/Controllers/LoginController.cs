@@ -1,5 +1,6 @@
 ﻿using Models;
-using newProject.Areas.Admin.Code;
+using Models.Dao;
+using newProject.Areas.Admin.Common;
 using newProject.Areas.Admin.Models;
 using System;
 using System.Collections.Generic;
@@ -19,19 +20,31 @@ namespace newProject.Areas.Admin.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Index(LoginModel model)
+        public ActionResult Login(LoginModel model)
         {
-            var result = new AccountModel().Login(model.Username, model.Password);
-            if(result && ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                SessionHelper.SetSession(new Usersession() { Username = model.Username });
-                return RedirectToAction("Index", "Home");
+                var dao = new UserDao();
+                var result = dao.Login(model.Username, Emcrytor.MD5Hash(model.Password));
+                if (result==1)
+                {
+                    var user = dao.getUserName(model.Username);
+                    var userSession = new UserLogin();
+                    userSession.Username = user.Username;
+                    userSession.MaThanhVien = user.MaThanhVien;
+                    Session.Add(CommonConstants.USER_SESSION,userSession);
+                    return RedirectToAction("Index", "Home");
+                }
+                else if(result == -1)
+                {
+                    ModelState.AddModelError("","Đăng nhập không đúng");
+                }
+                else if (result == 0)
+                {
+                    ModelState.AddModelError("", "Đăng nhập không tồn tại");
+                }
             }
-            else
-            {
-                ModelState.AddModelError("", "Tên đăng nhập hoặc mật khẩu không đúng");
-            }
-            return View(result);
+            return View("Index");
         }
     }
 }

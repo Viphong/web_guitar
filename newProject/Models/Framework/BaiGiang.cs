@@ -34,9 +34,20 @@ namespace Models.Framework
 
         public int? MaGD { get; set; }
 
+        [StringLength(225)]
+        public string MetaTitle { get; set; }
+
+        public DateTime? NgayChinhSua { get; set; }
+
+        public bool? TrangThai { get; set; }
+
+        public int? MaHA { get; set; }
+
         public virtual ChuDe ChuDe { get; set; }
 
         public virtual GiaiDieu GiaiDieu { get; set; }
+
+        public virtual HinhAnh HinhAnh { get; set; }
 
         public virtual LoaiBaiGiang LoaiBaiGiang { get; set; }
 

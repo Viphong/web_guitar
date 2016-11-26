@@ -5,10 +5,10 @@ namespace Models.Framework
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class DaydayDbContext : DbContext
+    public partial class DaydanDbContext : DbContext
     {
-        public DaydayDbContext()
-            : base("name=DaydayDbContext")
+        public DaydanDbContext()
+            : base("name=DaydanDbContext")
         {
         }
 
@@ -16,8 +16,10 @@ namespace Models.Framework
         public virtual DbSet<Blog> Blog { get; set; }
         public virtual DbSet<ChuDe> ChuDe { get; set; }
         public virtual DbSet<GiaiDieu> GiaiDieu { get; set; }
+        public virtual DbSet<HinhAnh> HinhAnh { get; set; }
         public virtual DbSet<LoaiBaiGiang> LoaiBaiGiang { get; set; }
         public virtual DbSet<LoaiBlog> LoaiBlog { get; set; }
+        public virtual DbSet<LoaiHinhAnh> LoaiHinhAnh { get; set; }
         public virtual DbSet<LoaiThanhVien> LoaiThanhVien { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<ThanhVien> ThanhVien { get; set; }
@@ -30,10 +32,23 @@ namespace Models.Framework
                 .WithOptional(e => e.BaiGiang)
                 .HasForeignKey(e => e.MaBG);
 
+            modelBuilder.Entity<Blog>()
+                .Property(e => e.TrangThai)
+                .IsFixedLength()
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ChuDe>()
+                .Property(e => e.MetaTile)
+                .IsUnicode(false);
+
             modelBuilder.Entity<ChuDe>()
                 .HasMany(e => e.BaiGiang)
                 .WithOptional(e => e.ChuDe)
                 .HasForeignKey(e => e.MaCD);
+
+            modelBuilder.Entity<GiaiDieu>()
+                .Property(e => e.MetaTile)
+                .IsUnicode(false);
 
             modelBuilder.Entity<GiaiDieu>()
                 .HasMany(e => e.BaiGiang)
@@ -44,6 +59,16 @@ namespace Models.Framework
                 .HasMany(e => e.Video)
                 .WithOptional(e => e.GiaiDieu)
                 .HasForeignKey(e => e.MaGD);
+
+            modelBuilder.Entity<HinhAnh>()
+                .HasMany(e => e.BaiGiang)
+                .WithOptional(e => e.HinhAnh)
+                .HasForeignKey(e => e.MaHA);
+
+            modelBuilder.Entity<HinhAnh>()
+                .HasMany(e => e.Blog)
+                .WithOptional(e => e.HinhAnh1)
+                .HasForeignKey(e => e.MaHA);
 
             modelBuilder.Entity<LoaiThanhVien>()
                 .HasMany(e => e.ThanhVien)

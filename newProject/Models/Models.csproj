@@ -51,13 +51,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountModel.cs" />
+    <Compile Include="Dao\BlogDao.cs" />
+    <Compile Include="Dao\UserDao.cs" />
+    <Compile Include="Dao\VideoDao.cs" />
     <Compile Include="Framework\BaiGiang.cs" />
     <Compile Include="Framework\Blog.cs" />
     <Compile Include="Framework\ChuDe.cs" />
-    <Compile Include="Framework\DaydayDbContext.cs" />
+    <Compile Include="Framework\DaydanDbContext.cs" />
     <Compile Include="Framework\GiaiDieu.cs" />
+    <Compile Include="Framework\HinhAnh.cs" />
     <Compile Include="Framework\LoaiBaiGiang.cs" />
     <Compile Include="Framework\LoaiBlog.cs" />
+    <Compile Include="Framework\LoaiHinhAnh.cs" />
     <Compile Include="Framework\LoaiThanhVien.cs" />
     <Compile Include="Framework\sysdiagrams.cs" />
     <Compile Include="Framework\ThanhVien.cs" />
@@ -69,6 +74,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

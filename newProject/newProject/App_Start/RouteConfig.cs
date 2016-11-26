@@ -14,6 +14,12 @@ namespace newProject
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "Video",
+                url: "video/{metatitle}/{videoId}",
+                defaults: new { controller = "VideoPage", action = "VideoDetail", id = UrlParameter.Optional },
+                namespaces: new[] { "newProject.Controllers" }
+            );
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },

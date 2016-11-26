@@ -30,10 +30,10 @@
                         <h3 class="panel-title">Please Sign In</h3>
                     </div>
                     <div class="panel-body">
-                        @using (Html.BeginForm())
+                        @using (Html.BeginForm("Login","Login",FormMethod.Post))
                         {
                             @Html.AntiForgeryToken()
-                            @Html.ValidationSummary(true, null, new { @class = "alert alert-danger" })
+                            @Html.ValidationSummary(false, "", new { @class = "alert alert-danger" });
                             <fieldset>
                                 <div class="form-group">
                                     @Html.TextBoxFor(model => model.Username, new { @class = "form-control", @placeholder = "Username", @autofocus = "autofocus" })
@@ -50,7 +50,6 @@
                                 <!-- Change this to a button or input when using this as a form -->
                                 <button type="submit" class="btn btn-lg btn-success btn-block">Login</button>
                             </fieldset>
-
                         }
                     </div>
                 </div>

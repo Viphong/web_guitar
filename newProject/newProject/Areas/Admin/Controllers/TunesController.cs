@@ -24,7 +24,7 @@ namespace newProject.Areas.Admin.Controllers
         {
             return View();
         }
-
+        [HttpGet]
         // GET: Admin/Tunes/Create
         public ActionResult Create()
         {
@@ -33,14 +33,25 @@ namespace newProject.Areas.Admin.Controllers
 
         // POST: Admin/Tunes/Create
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(GiaiDieu collection)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    // TODO: Add insert logic here
-                    return RedirectToAction("Index");
+                    var model = new TunesModel();
+                    int res = model.Create(collection.TenGiaiDieu, collection.MoTa);
+                    if(res>0)
+                    
+                        // TODO: Add insert logic here
+                        return RedirectToAction("Index");
+                    
+                    else
+                    {
+                        ModelState.AddModelError("", "Thêm mới không thành công");
+                    }
+                    
                 }
                 return View(collection);
               

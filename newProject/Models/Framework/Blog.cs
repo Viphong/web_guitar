@@ -26,10 +26,22 @@ namespace Models.Framework
         public int? MaLoaiBlog { get; set; }
 
         [StringLength(255)]
-        public string Noidung { get; set; }
+        public string HinhAnh { get; set; }
+
+        [StringLength(225)]
+        public string MetaTitle { get; set; }
+
+        public DateTime? NgayChinhSua { get; set; }
 
         [StringLength(255)]
-        public string HinhAnh { get; set; }
+        public string Noidung { get; set; }
+
+        [StringLength(10)]
+        public string TrangThai { get; set; }
+
+        public int? MaHA { get; set; }
+
+        public virtual HinhAnh HinhAnh1 { get; set; }
 
         public virtual LoaiBlog LoaiBlog { get; set; }
 

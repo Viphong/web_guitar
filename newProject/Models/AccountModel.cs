@@ -10,11 +10,11 @@ namespace Models
 {
     public class AccountModel
     {
-        private DaydayDbContext context = null;
+        private DaydanDbContext context = null;
 
         public AccountModel()
         {
-            context = new DaydayDbContext();
+            context = new DaydanDbContext();
         }
         public bool Login(string userName, string passWord)
         {

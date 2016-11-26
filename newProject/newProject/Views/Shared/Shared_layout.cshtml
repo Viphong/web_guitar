@@ -15,12 +15,14 @@
     <meta name="keywords" content=" " />
     <meta name="author" content=" " />
     <!-- Stylesheet -->
+
+    <link href="~/Assets/client/css/backgrounds.css" rel="stylesheet" />
     <link href="~/Assets/client/css/style.css" rel="stylesheet" />
     <link href="~/Assets/client/css/layout.css" rel="stylesheet" />
     <link href="~/Assets/client/css/awesome.css" rel="stylesheet" />
     <link href="~/Assets/client/css/grid.css" rel="stylesheet" />
     <link href="~/Assets/client/css/red.css" rel="stylesheet" />
-    <link href="~/Assets/client/css/backgrounds.css" rel="stylesheet" />
+  
     <link href="~/Assets/client/css/fonts.css" rel="stylesheet" />
     <link href="~/Assets/client/css/lightbox.css" rel="stylesheet" />
     <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -59,25 +61,17 @@
                 <li>
                     <a href="@Url.Action("Index","Home")" class="current">Home</a>
                 </li>
+                @* Bài giảng menu *@
+                @Html.Partial("~/Views/Shared/ViewLesson.cshtml")   
+                @* Blog menu *@
+                @{Html.RenderAction("BlogMenu", "Home");}
                 <li>
-                    <a href="@Url.Action("Index","Lesson")">Bài Giảng</a>
-                    <ul>
-                        @Html.Partial("~/Views/Shared/ViewLesson.cshtml");
-                    </ul>
-                </li>
-                <li>
-                    <a href="@Url.Action("Index","Blog")">Blog</a>
-                    <ul>
-                        <li><a href="@Url.Action("Index","BlogPost")">Kinh Nghiệm-Chia Sẻ</a></li>
-                        <li><a href="@Url.Action("Index","BlogPost")">Học Đàn</a></li>
-                        <li><a href="@Url.Action("Index","BlogPost")">Thông Báo</a></li>
-                    </ul>
+                    <a href="@Url.Action("Index","VideoPage")">Video</a>
                 </li>
                 <li>
                     <a href="@Url.Action("Index","Contact")">Contact</a>
                 </li>
                 <li>
-                    @Phần này là để sort theo chủ đề@
                     <a href="page-contact.html">Chủ Đề</a>
                     <ul>
                         <li><a href="#">Nhạc Quê Hương</a></li>
@@ -87,15 +81,8 @@
                         <li><a href="#">Nhạc Trẻ</a></li>
                     </ul>
                 </li>
-                <li>
-@Phần này là để sort theo giai điệu@
-                    <a href="page-contact.html">Giai Điệu</a>
-                    <ul>
-                        <li><a href="#">Valse</a></li>
-                        <li><a href="#">Ballade</a></li>
-                        <li><a href="#">Slow</a></li>
-                    </ul>
-                </li>
+                @* Giai Điệu *@
+                @*@Html.Partial("~/Views/Shared/TunesMenu.cshtml")*@
             </ul>
         </div>
         <!-- Search bar -->
@@ -107,12 +94,10 @@
     <!-- content -->
     <div class="container">
         @RenderBody()
-        <!-- sidebar -->
-        @RenderSection("Sidebar", false);
     </div>
-    @RenderSection("Featured_Carousel", false);
+    @RenderSection("Featured_Carousel", false)
     <!-- Pagination -->
-    @RenderSection("Pagination", false);
+    @RenderSection("Pagination", false)
     <!-- Footer -->
     <div id="footer">
         <div class="container">

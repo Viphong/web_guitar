@@ -6,33 +6,25 @@ namespace Models.Framework
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("ChuDe")]
-    public partial class ChuDe
+    [Table("LoaiHinhAnh")]
+    public partial class LoaiHinhAnh
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ChuDe()
+        public LoaiHinhAnh()
         {
-            BaiGiang = new HashSet<BaiGiang>();
+            HinhAnh = new HashSet<HinhAnh>();
         }
 
         [Key]
-        public int MaChuDe { get; set; }
-
-        [StringLength(20)]
-        public string TenChuDe { get; set; }
-
-        [StringLength(30)]
-        public string MoTaCD { get; set; }
-
-        [StringLength(225)]
-        public string MetaTitle { get; set; }
+        public int MaLoaiHinhAnh { get; set; }
 
         [StringLength(255)]
-        public string MetaTile { get; set; }
+        public string TenLoaiHinhAnh { get; set; }
 
-        public bool? TrangThai { get; set; }
+        [StringLength(50)]
+        public string Mota { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BaiGiang> BaiGiang { get; set; }
+        public virtual ICollection<HinhAnh> HinhAnh { get; set; }
     }
 }

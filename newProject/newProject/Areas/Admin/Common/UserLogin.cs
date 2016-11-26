@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace newProject.Areas.Admin.Code
+namespace newProject.Areas.Admin.Common
 {
-    public class Usersession
+    [Serializable]
+    public class UserLogin
     {
+        public long MaThanhVien { set; get; }
         public string Username { set; get; }
     }
 }

@@ -1,0 +1,12 @@
+﻿@model List<Models.Framework.LoaiBlog>
+<li>
+    <a href="@Url.Action("Index","Blog")">Blog</a>
+    <ul>
+        @foreach (var i in Model)
+        {
+            <li><a href="@Url.Action("Index","BlogPost")">@i.TenLoaiBlog</a></li>
+        }
+       
+        
+    </ul>
+</li>

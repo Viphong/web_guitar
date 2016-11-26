@@ -32,6 +32,17 @@ namespace Models.Framework
 
         public int? MaGD { get; set; }
 
+        [StringLength(225)]
+        public string HinhAnh { get; set; }
+
+        [StringLength(225)]
+        public string MetaTitle { get; set; }
+
+        public DateTime? NgayChinhSua { get; set; }
+
+        [StringLength(255)]
+        public string Link { get; set; }
+
         public virtual BaiGiang BaiGiang { get; set; }
 
         public virtual Blog Blog { get; set; }

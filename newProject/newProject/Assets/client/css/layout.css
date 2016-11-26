@@ -456,6 +456,23 @@ ul.primary-navigation ul ul {
 	position: relative; 
 	width: 1200px;
 }
+.link{
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("images/play.png") no-repeat;
+    background-size: 0;
+    background-position: center;
+    -webkit-transition: background-size 0.3s, background-color 0.3s;
+    transition: background-size 0.3s, background-color 0.3s;
+}
+.typical_slide:hover .link
+{
+	background-size: 40px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
 /* ==========================================================================
    Featured slider
    ========================================================================== */
@@ -673,11 +690,22 @@ ul.social-icons li.rss a {
 	margin-bottom: 40px
 }
 /* ==========================================================================
+   Primary container
+   ========================================================================== */
+   #primary-left1{
+   	margin-left: 3%;
+   	float: left;
+   	margin-bottom: 30px;
+   	position: relative;
+   }
+
+/* ==========================================================================
    Sidebar
    ========================================================================== */
 #sidebar {
 	float: left;
-	width: 25%
+	width: 25%;
+	margin-bottom: 30px;
 }
 #sidebar .widget.no-bg {
 	background-color: transparent !important;
@@ -1097,8 +1125,81 @@ ul.widget-flickr li:hover {
 	-moz-box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.03);
 	box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.03);
 }
+/*=================================================================
+post1
+=================================================================*/
+
+#primary-left .post1 {
+    position: relative;
+    float: left;
+    margin: 0;
+	}
+ #primary-left .post1{
+	position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden
+}
+#primary-left .post1 {
+	width: 280px;
+}
+#primary-left .post1 img {
+    width: 280px;
+}
+#primary-left .post1 .bg-gradient{
+	position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+}
+#primary-left .post1 .duration{
+	position: absolute;
+    top: 0;
+    right: 0;
+    padding: 3px 5px;
+    color: #ffffff;
+    font-size: 11px;
+    background: -webkit-linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.8));
+    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.8));
+}
+#primary-left .post1 .view{
+	position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 5px 8px;
+    color: #ffffff;
+    font-size: 11px;
+   
+    border-radius: 0 0 0 5px;
+}
+ #primary-left .post1 .link{
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../img/posts/play.png") no-repeat;
+    background-size: 0;
+    background-position: center;
+    -webkit-transition: background-size 0.3s, background-color 0.3s;
+    transition: background-size 0.3s, background-color 0.3s;
+}
+#primary-left .post1:hover .link
+{
+	background-size: 40px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+#primary-left .post1{
+	margin-right: 8px;
+	margin-bottom: 20px;
+}
+/*===============================POST1==================================*/
 .post-image {
-	background-color: #333;
+	/*background-color: #333;*/
 	position: relative
 }
 .post-audio {
@@ -1178,7 +1279,7 @@ ul.widget-flickr li:hover {
 .article-standard .slider {
 }
 .article-standard .post-image img {
-	width: 350px
+	width: 280px
 }
 h1.entry-title {
 	font-weight: 400;

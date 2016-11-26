@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Shared_Layout.cshtml";
+    var listnewVideo = (List<Models.Framework.Video>)ViewBag.NewVideo;
+}
+<!-- Intro block -->
+<div id="intro-block">
+    <div class="container">
+        <h3>iMagPress is a unique html magazine template<br>with flat and metro elements.</h3>
+        <h5>Perfect for all sorts of news content.<br>Many different blog post styles with integrated ratings, videos and slideshow.</h5>
+        <a href="http://themeforest.net/user/Voodoo-pixel?ref=Voodoo-pixel" target="_blank" class="button colored">View more</a>
+    </div>
+</div>
+<!-- Primary left -->
+<div id="primary-fullwidth">
+    @foreach (var item in listnewVideo)
+    {
+        var url = "/video/" + @item.MetaTitle + "/" + @item.Mavideo;
+    <!-- Article vertical -->
+        <div class="article-vertical col3">
+            <!-- Video frame -->
+            <div class="fluid-width-video-wrapper" style="padding-top: 62.5%;">
+            <iframe src="@item.Link"></iframe></div>
+            <div class="entry-content">
+                <h1 class="entry-title"><a href="@url">@item.Tenvideo</a></h1>
+                <div class="entry-meta">
+                    <div class="review-stars">
+                        <span class="star-full"></span>
+                        <span class="star-full"></span>
+                        <span class="star-full"></span>
+                        <span class="star-full"></span>
+                        <span class="star-full"></span>
+                    </div>
+                    <div class="description-em">
+                        <span class="by-view-number">42</span>
+                        <span class="by-date">3 days ago</span>
+                        <span class="by-comments"><a href="#">4</a></span>
+                    </div>
+                </div>
+                <span class="format-post"><i class="icon-play-sign"></i></span>
+            </div>
+        </div>
+    }
+
+    <!-- Category -->
+    @{Html.RenderAction("tunesCategory", "Home");}
+
+    <!-- Tags -->
+    <div class="widget">
+        <h4 class="widget-title">Popular tags</h4>
+        <div class="tagcloud">
+            <a href="#">volutpat</a>
+            <a href="#">suscipit</a>
+            <a href="#">fermentum tincidunt</a>
+            <a href="#">hendrerit</a>
+            <a href="#">sed</a>
+            <a href="#">vulputate</a>
+            <a href="#">ipsum</a>
+        </div>
+    </div>
+</div>
+<!-- Pagination -->
+<div class="clear"></div>
+<div class="container">
+    <ul class="pagination">
+        <li class="prev disabled">PREV</li>
+        <li class="current">1</li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li class="next"><a href="#">NEXT</a></li>
+    </ul>
+    <!-- Clear floating divs -->
+    <div class="clear"></div>
+</div>
+
+
