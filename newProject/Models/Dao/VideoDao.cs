@@ -19,6 +19,10 @@ namespace Models.Dao
             return db.Video.OrderByDescending(x=>x.Ngaydang).Take(top).ToList();
          
         }
+        public List<Video> ListByTunes(long tuneId)
+        {
+            return db.Video.Where(x => x.MaGD == tuneId).ToList();
+        }
         public Video VideoDetail(long id)
         {
             return db.Video.Find(id);

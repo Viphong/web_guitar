@@ -12,11 +12,22 @@ namespace newProject
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
+            routes.MapRoute(
+               name: "BaiGiang",
+               url: "baigiang/{metatitle}/{baigiangId}",
+               defaults: new { controller = "Lesson", action = "ViewLessonType", id = UrlParameter.Optional },
+               namespaces: new[] { "newProject.Controllers" }
+           );
             routes.MapRoute(
                 name: "Video",
-                url: "video/{metatitle}/{videoId}",
+                url: "videoDetail/{metatitle}/{videoId}",
                 defaults: new { controller = "VideoPage", action = "VideoDetail", id = UrlParameter.Optional },
+                namespaces: new[] { "newProject.Controllers" }
+            );
+            routes.MapRoute(
+                name: "VideoByTunes",
+                url: "video/{metatitle}/{TunesId}",
+                defaults: new { controller = "VideoPage", action = "Tunes", id = UrlParameter.Optional },
                 namespaces: new[] { "newProject.Controllers" }
             );
             routes.MapRoute(

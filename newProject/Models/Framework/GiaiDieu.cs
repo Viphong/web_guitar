@@ -25,9 +25,6 @@ namespace Models.Framework
         [StringLength(50)]
         public string MoTa { get; set; }
 
-        [StringLength(225)]
-        public string MetaTitle { get; set; }
-
         [StringLength(255)]
         public string MetaTile { get; set; }
 

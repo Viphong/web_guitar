@@ -9,13 +9,12 @@
 <div id="primary-left">
     @foreach (var item in listnewVideo)
     {
-          
-        var url = "/video/" + @item.MetaTitle + "/" + @item.Mavideo;
+        var url = "/videoDetail/" + @item.MetaTitle + "/" + @item.Mavideo;
         <!-- Article standard -->
         <div class="article-standard">
             <div class="post-video">
                 <div class="fluid-width-video-wrapper" style="padding-top: 85.7143%;">
-                <iframe src="@item.Link" ></iframe>
+                    <iframe src="@item.Link"></iframe>
                 </div>
             </div>
             <div class="entry-content">

@@ -366,6 +366,8 @@
     <Content Include="Views\VideoPage\VideoDetail.cshtml" />
     <Content Include="Views\Shared\TunesMenu.cshtml" />
     <Content Include="Views\Shared\BlogMenu.cshtml" />
+    <Content Include="Views\VideoPage\Tunes.cshtml" />
+    <Content Include="Views\Lesson\ViewLessonType.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

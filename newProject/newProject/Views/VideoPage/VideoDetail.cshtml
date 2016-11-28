@@ -347,16 +347,7 @@
         <ul class="widget-flickr"></ul>
     </div>
     <!-- Category -->
-    <div class="widget">
-        <h3 class="widget-title">Category</h3>
-        <ul class="widget-category">
-            <li><a href="#">Technology</a><span>6</span></li>
-            <li><a href="#">Travel</a><span>13</span></li>
-            <li><a href="#">Design</a><span>2</span></li>
-            <li><a href="#">Fashion</a><span>45</span></li>
-            <li><a href="#">Lifestyle</a><span>31</span></li>
-        </ul>
-    </div>
+    @{Html.RenderAction("tunesCategory", "Home");}
     <!-- Tags -->
     <div class="widget">
         <h3 class="widget-title">Popular tags</h3>

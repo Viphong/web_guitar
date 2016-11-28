@@ -25,7 +25,11 @@ namespace Models.Framework
         [StringLength(50)]
         public string MoTaLoaiBG { get; set; }
 
+        public bool? TrangThai { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BaiGiang> BaiGiang { get; set; }
+
+        
     }
 }

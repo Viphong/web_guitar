@@ -14,7 +14,7 @@ namespace newProject.Controllers
         public ActionResult Index()
         {
             var VideoDao = new VideoDao();
-            ViewBag.NewVideo = VideoDao.ListNewVideo(4);
+            ViewBag.NewVideo = VideoDao.ListNewVideo(5);
             return View();
            
         }

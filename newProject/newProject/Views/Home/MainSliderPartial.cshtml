@@ -1,154 +1,55 @@
-﻿
+﻿@{
+
+    var listnewVideo = (List<Models.Framework.Video>)ViewBag.NewVideo;
+}
 <div id="slider-container">
     <div class="container">
         <!-- Slides MUST BE 5 -->
         <div class="bx-wrapper" style="max-width: 100%;">
             <div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 500px;">
                 <ul id="featured-slider" style="width: 715%; position: relative; left: -800px;">
-                    <li class="bx-clone typical_slide">
-                        <a href="#">
-                            <img src="~/Assets/client/images/slider/slider_5.jpg" />
-                        </a>
-                        <div class="bx-caption">
-                            <span>Healthy eating starts with learning new ways to eat.</span>
-                        </div>
-                    </li>
-                    <li class="typical_slide">
-                        <a href="#">
-                            <img src="~/Assets/client/images/slider/slider_1.jpg" />
-                        </a>
-                        <div class="bx-caption">
-                            <span>Men's jumpers 10 different looks – in pictures.</span>
-                        </div>
-                    </li>
-                    <li class="typical_slide">
-                        <div class="fluid-width-video-wrapper" style="padding-top: 62.5%;">
-                            <iframe src="//player.vimeo.com/video/56974716?title=0&amp;byline=0&amp;portrait=0&amp;color=e74c3c" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" id="fitvid468063"></iframe>
-                        </div>
-                    </li>
-                    <li class="typical_slide">
-                        <a href="#">
-                            <img src="~/Assets/client/images/slider/slider_4.jpg" />
-                        </a>
-                        <div class="bx-caption">
-                            <span>Tickets for Glastonbury 2014 have now Sold Out.</span>
-                        </div>
-                    </li>
-                    <li class="typical_slide">
-                        <a href="#">
-                            <img src="~/Assets/client/images/slider/slider_3.jpg" />
-                        </a>
-                        <div class="bx-caption">
-                            <span>Improving your eating habits will contribute to you achieving and maintaining a healthy weight.</span>
-                        </div>
-                    </li>
-                    <li class="typical_slide">
-                        <a href="#">
-                            <img src="~/Assets/client/images/slider/slider_4.jpg" />
-                        </a>
-                        <div class="bx-caption">
-                            <span>Healthy eating starts with learning new ways to eat.</span>
-                        </div>
-                    </li>
-                    <li class="bx-clone typical_slide">
-                        <a href="#">
-                            <img src="~/Assets/client/images/slider/slider_5.jpg" />
-                        </a>
-                        <div class="bx-caption">
-                            <span>Men's jumpers 10 different looks – in pictures.</span>
-                        </div>
-                    </li>
+                    @foreach (var item in listnewVideo)
+                    {
+
+                        var url = "/video/" + @item.MetaTitle + "/" + @item.Mavideo;
+                        <li class="typical_slide">
+                            <div class="fluid-width-video-wrapper" style="padding-top: 62.5%;">
+
+                                <iframe src="@item.Link"></iframe>
+                            </div>
+                        </li>
+                    }
                 </ul>
             </div>
             <div class="bx-controls"></div>
         </div>
         <!-- Tabs for slides MUST BE 5 -->
         <div id="featured-slider-pager">
-            <a data-slide-index="0" href="" class="active">
-                <img src="~/Assets/client/images/slider/slider_small_5.jpg" />
-                <h3>Men's jumpers 10 different looks – in pictures.</h3>
-                <div class="entry-meta">
-                    <div class="review-stars">
-                        <span class="star-full"></span>
-                        <span class="star-full"></span>
-                        <span class="star-full"></span>
-                        <span class="star-full"></span>
-                        <span class="star-half"></span>
-                    </div>
-                    <div class="description-em">
-                        <span class="by-view-number">13</span>
-                        <span class="by-date">1 day ago</span>
-                    </div>
-                </div>
-            </a>
-            <a data-slide-index="1" href="">
-                <img src="~/Assets/client/images/slider/slider_small_1.jpg" />
-                <h3>Mauris urna lorem molestie vestibulum est congue egestas mauris.</h3>
-                <div class="entry-meta">
-                    <div class="review-stars">
-                        <span class="star-full"></span>
-                        <span class="star-half"></span>
-                        <span class="star-empty"></span>
-                        <span class="star-empty"></span>
-                        <span class="star-empty"></span>
-                    </div>
-                    <div class="description-em">
-                        <span class="by-view-number">47</span>
-                        <span class="by-date">3 days ago</span>
-                    </div>
-                </div>
-            </a>
-            <a data-slide-index="2" href="">
-                <img src="~/Assets/client/images/slider/slider_small_2.jpg" />
-                <h3>Tickets for Glastonbury 2014 have now Sold Out.</h3>
-                <div class="entry-meta">
-                    <div class="review-stars">
-                        <span class="star-full"></span>
-                        <span class="star-full"></span>
-                        <span class="star-full"></span>
-                        <span class="star-full"></span>
-                        <span class="star-full"></span>
-                    </div>
-                    <div class="description-em">
-                        <span class="by-view-number">406</span>
-                        <span class="by-date">1 day ago</span>
-                    </div>
-                </div>
-            </a>
-            <a data-slide-index="3" href="">
-                <img src="~/Assets/client/images/slider/slider_small_3.jpg" />
-                <h3>Improving your eating habits will contribute to you achieving and maintaining a healthy weight.</h3>
-                <div class="entry-meta">
-                    <div class="review-stars">
-                        <span class="star-full"></span>
-                        <span class="star-full"></span>
-                        <span class="star-half"></span>
-                        <span class="star-empty"></span>
-                        <span class="star-empty"></span>
-                    </div>
-                    <div class="description-em">
-                        <span class="by-view-number">16</span>
-                        <span class="by-date">2 days ago</span>
-                    </div>
-                </div>
-            </a>
-            <a data-slide-index="4" href="">
-                <img src="~/Assets/client/images/slider/slider_small_4.jpg" />
-                <h3>Healthy eating starts with learning new ways to eat.</h3>
-                <div class="entry-meta">
-                    <div class="review-stars">
-                        <span class="star-full"></span>
-                        <span class="star-full"></span>
-                        <span class="star-full"></span>
-                        <span class="star-full"></span>
-                        <span class="star-half"></span>
-                    </div>
-                    <div class="description-em">
-                        <span class="by-view-number">187</span>
-                        <span class="by-date">1 week ago</span>
-                    </div>
-                </div>
-            </a>
-        </div>
+
+            @{
+                int i = 0;
+                foreach (var item in listnewVideo)
+                {
+                    <a data-slide-index=@i href="" class="active">
+                        <img src="~/Assets/client/images/slider/slider_small_1.jpg" />
+                        <h3>@item.Tenvideo</h3>
+                        <div class="entry-meta">
+                            <div class="review-stars">
+                                <span class="star-full"></span>
+                                <span class="star-full"></span>
+                                <span class="star-full"></span>
+                                <span class="star-full"></span>
+                                <span class="star-half"></span>
+                            </div>
+                            <div class="description-em">
+                                <span class="by-view-number">13</span>
+                                <span class="by-date">1 day ago</span>
+                            </div>
+                        </div>
+                    </a>
+                    i++;
+                }
+            }
     </div>
+</div>
 </div>

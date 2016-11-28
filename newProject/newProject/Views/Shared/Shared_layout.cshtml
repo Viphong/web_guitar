@@ -62,7 +62,7 @@
                     <a href="@Url.Action("Index","Home")" class="current">Home</a>
                 </li>
                 @* Bài giảng menu *@
-                @Html.Partial("~/Views/Shared/ViewLesson.cshtml")   
+                @{Html.RenderAction("ViewLesson", "Lesson");}
                 @* Blog menu *@
                 @{Html.RenderAction("BlogMenu", "Home");}
                 <li>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Models.Dao;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,21 @@ namespace newProject.Controllers
         // GET: Lesson
         public ActionResult Index()
         {
-            return View();
+            var model = new LessonDao().ListAllLesson();
+            return View(model);
         }
+
+        [ChildActionOnly]
+        public ActionResult ViewLesson()
+        {
+            var model = new LessonDao().Listlesson();
+            return PartialView(model);
+        }
+        public ActionResult ViewLessonType(long baigiangId)
+        {
+            var model = new LessonDao().Listlesson();
+            return PartialView(model);
+        }
+       
     }
 }

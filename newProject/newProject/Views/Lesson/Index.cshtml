@@ -1,148 +1,43 @@
-﻿@{
+﻿@model List<Models.ModelView.LessonViewModel>
+@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/Shared_Layout.cshtml";
 }
 <!-- Primary left -->
 <div id="primary-left">
-    <!-- Article standard -->
-    <div class="article-standard">
-        <div class="post-image">
-            <img src="~/Content/img/posts/blog_post_3.jpg" alt="Post">
-            <ol class="social-links">
-                <li><a href="#"><i class="icon-link"></i></a></li>
-                <li><a href="~/Content/img/posts/blog_post_3.jpg" rel="lightbox"><i class="icon-search"></i></a></li>
-            </ol>
-        </div>
-        <div class="entry-content">
-            <h1 class="entry-title"><a href="#">Post with image and text paragraph</a></h1>
-            <div class="entry-meta">
-                <div class="review-stars">
-                    <span class="star-full"></span>
-                    <span class="star-full"></span>
-                    <span class="star-full"></span>
-                    <span class="star-full"></span>
-                    <span class="star-full"></span>
-                </div>
-                <div class="description-em">
-                    <span class="by-view-number">132</span>
-                    <span class="by-date">1 day ago</span>
-                    <span class="by-comments"><a href="#">42</a></span>
+    @foreach (var i in Model)
+    {
+        var url = "/baigiang/" + @i.MetaTitle + "/" + @i.MaBaiGiang;
+          <!-- Article standard -->
+        <div class="article-standard">
+            <div class="post-video">
+                <div class="fluid-width-video-wrapper" style="padding-top: 85.7143%;">
+                    <iframe src="@i.LinkVideo"></iframe>
                 </div>
             </div>
-            <p>Hooking up with Double Identity for another sic collab shoe. The last one already rockin these new ones out and about. Eget nunc nunc.</p>
-            <a href="#" class="read-more">Read more</a>
-            <span class="format-post"><i class="icon-file-text-alt"></i></span>
-        </div>
-    </div>
-    <!-- Article standard -->
-    <div class="article-standard">
-        <div class="post-image">
-            <img src="~/Content/img/posts/blog_post_2.jpg" alt="Post">
-            <ol class="social-links">
-                <li><a href="#"><i class="icon-link"></i></a></li>
-                <li><a href="~/Content/img/posts/blog_post_2.jpg" rel="lightbox"><i class="icon-search"></i></a></li>
-            </ol>
-        </div>
-        <div class="entry-content">
-            <h1 class="entry-title"><a href="#">Post with slider images and text</a></h1>
-            <div class="entry-meta">
-                <div class="review-stars">
-                    <span class="star-full"></span>
-                    <span class="star-full"></span>
-                    <span class="star-full"></span>
-                    <span class="star-full"></span>
-                    <span class="star-full"></span>
+            <div class="entry-content">
+                <h1 class="entry-title"><a href="@url">@i.TenBaiGiang</a></h1>
+                <div class="entry-meta">
+                    <div class="review-stars">
+                        <span class="star-full"></span>
+                        <span class="star-full"></span>
+                        <span class="star-full"></span>
+                        <span class="star-full"></span>
+                        <span class="star-full"></span>
+                    </div>
+                    <div class="description-em">
+                        <span class="by-view-number">132</span>
+                        <span class="by-date">1 day ago</span>
+                        <span class="by-comments"><a href="#">42</a></span>
+                    </div>
                 </div>
-                <div class="description-em">
-                    <span class="by-view-number">132</span>
-                    <span class="by-date">1 day ago</span>
-                    <span class="by-comments"><a href="#">42</a></span>
-                </div>
+                <p>@i.NoiDung</p>
+                <a href="@url" class="read-more">Read more</a>
+                <span class="format-post"><i class="icon-play-sign"></i></span>
             </div>
-            <p>Hooking up with Double Identity for another sic collab shoe. The last one already rockin these new ones out and about. Eget nunc nunc.</p>
-            <a href="#" class="read-more">Read more</a>
-            <span class="format-post"><i class="icon-camera"></i></span>
         </div>
-    </div>
-    <!-- Article standard -->
-    <div class="article-standard">
-        <div class="post-video">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/ejI5qqc8jQo" frameborder="0" allowfullscreen=""></iframe>
-        </div>
-        <div class="entry-content">
-            <h1 class="entry-title"><a href="#">Post with Vimeo video clip and text</a></h1>
-            <div class="entry-meta">
-                <div class="review-stars">
-                    <span class="star-full"></span>
-                    <span class="star-full"></span>
-                    <span class="star-full"></span>
-                    <span class="star-full"></span>
-                    <span class="star-full"></span>
-                </div>
-                <div class="description-em">
-                    <span class="by-view-number">132</span>
-                    <span class="by-date">1 day ago</span>
-                    <span class="by-comments"><a href="#">42</a></span>
-                </div>
-            </div>
-            <p>Hooking up with Double Identity for another sic collab shoe. The last one already rockin these new ones out and about. Eget nunc nunc.</p>
-            <a href="#" class="read-more">Read more</a>
-            <span class="format-post"><i class="icon-play-sign"></i></span>
-        </div>
-    </div>
-    <!-- Article standard -->
-    <div class="article-standard">
-        <div class="post-image">
-            <img src="~/Content/img/posts/blog_post_4.jpg" alt="Post">
-            <ol class="social-links">
-                <li><a href="#"><i class="icon-link"></i></a></li>
-                <li><a href="~/Content/img/posts/blog_post_4.jpg" rel="lightbox"><i class="icon-search"></i></a></li>
-            </ol>
-        </div>
-        <div class="entry-content">
-            <h1 class="entry-title"><a href="#">Post with Soundcloud music</a></h1>
-            <div class="entry-meta">
-                <div class="review-stars">
-                    <span class="star-full"></span>
-                    <span class="star-full"></span>
-                    <span class="star-full"></span>
-                    <span class="star-full"></span>
-                    <span class="star-full"></span>
-                </div>
-                <div class="description-em">
-                    <span class="by-view-number">132</span>
-                    <span class="by-date">1 day ago</span>
-                    <span class="by-comments"><a href="#">42</a></span>
-                </div>
-            </div>
-            <p>Hooking up with Double Identity for another sic collab shoe. The last one already rockin these new ones out and about. Eget nunc nunc.</p>
-            <a href="#" class="read-more">Read more</a>
-            <span class="format-post"><i class="icon-music"></i></span>
-        </div>
-    </div>
-    <!-- Article standard -->
-    <div class="article-standard post-with-no-image">
-        <div class="entry-content">
-            <h1 class="entry-title"><a href="#">Post with no image</a></h1>
-            <div class="entry-meta">
-                <div class="review-stars">
-                    <span class="star-full"></span>
-                    <span class="star-full"></span>
-                    <span class="star-full"></span>
-                    <span class="star-full"></span>
-                    <span class="star-full"></span>
-                </div>
-                <div class="description-em">
-                    <span class="by-view-number">132</span>
-                    <span class="by-date">1 day ago</span>
-                    <span class="by-comments"><a href="#">42</a></span>
-                </div>
-            </div>
-            <p>Sed quis cursus libero. Nunc eget tortor sagittis, tempor purus in, aliquam velit. Proin rutrum placerat purus, eget scelerisque ipsum sollicitudin sit amet. Suspendisse nec lorem sit amet tellus facilisis porta vel vitae erat. Integer nunc nunc, egestas quis libero malesuada, convallis suscipit magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla id iaculis lectus, eu semper justo. In nec eros a dolor varius congue at sit amet diam. Sed consequat eros sit amet magna commodo, vitae varius diam malesuada.</p>
-            <a href="#" class="read-more">Read more</a>
-            <span class="format-post"><i class="icon-file-text-alt"></i></span>
-        </div>
-    </div>
+    }
+  
 </div>
 <!-- Sidebar -->
 <div id="sidebar">

@@ -1,8 +1,10 @@
-﻿@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/Shared_Layout.cshtml";
-    var listnewVideo = (List<Models.Framework.Video>)ViewBag.NewVideo;
+﻿@model List<Models.Framework.Video>
+@{
+    var tunes = (Models.Framework.GiaiDieu)ViewBag.Tunes;
+    ViewBag.Title = tunes.TenGiaiDieu;
+    Layout = "~/Views/Shared/Shared_layout.cshtml";
 }
+
 <!-- Intro block -->
 <div id="intro-block">
     <div class="container">
@@ -13,17 +15,17 @@
 </div>
 <!-- Primary left -->
 <div id="primary-fullwidth">
-    @foreach (var i in listnewVideo)
+    @foreach (var item in Model)
     {
-        var url = "/videoDetail/" + @i.MetaTitle + "/" + @i.Mavideo;
-         <!-- Article vertical -->
+        var url = "/videoDetail/" + @item.MetaTitle + "/" + @item.Mavideo;
+    <!-- Article vertical -->
         <div class="article-vertical col3">
             <!-- Video frame -->
             <div class="fluid-width-video-wrapper" style="padding-top: 62.5%;">
-                <iframe src="@i.Link"></iframe>
+                <iframe src="@item.Link"></iframe>
             </div>
             <div class="entry-content">
-                <h1 class="entry-title"><a href="@url">@i.Tenvideo</a></h1>
+                <h1 class="entry-title"><a href="@url">@item.Tenvideo</a></h1>
                 <div class="entry-meta">
                     <div class="review-stars">
                         <span class="star-full"></span>
@@ -42,7 +44,7 @@
             </div>
         </div>
     }
-    
+    <div id="sidebar">
         <!-- Category -->
         @{Html.RenderAction("tunesCategory", "Home");}
 
@@ -59,9 +61,8 @@
                 <a href="#">ipsum</a>
             </div>
         </div>
-    
+    </div>
 </div>
-
 <!-- Pagination -->
 <div class="clear"></div>
 <div class="container">
@@ -76,5 +77,6 @@
     <!-- Clear floating divs -->
     <div class="clear"></div>
 </div>
+
 
 
