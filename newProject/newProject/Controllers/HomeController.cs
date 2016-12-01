@@ -15,6 +15,8 @@ namespace newProject.Controllers
         {
             var VideoDao = new VideoDao();
             ViewBag.NewVideo = VideoDao.ListNewVideo(5);
+            var model = new LessonDao();
+            ViewBag.NewLesson = model.ListAllLesson();
             return View();
            
         }

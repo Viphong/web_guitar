@@ -217,6 +217,8 @@
     <Content Include="Assets\client\images\posts\games_small_1.jpg" />
     <Content Include="Assets\client\images\posts\games_small_2.jpg" />
     <Content Include="Assets\client\images\posts\games_small_3.jpg" />
+    <Content Include="Assets\client\images\posts\img.jpg" />
+    <Content Include="Assets\client\images\posts\img2.jpg" />
     <Content Include="Assets\client\images\posts\post_1.jpg" />
     <Content Include="Assets\client\images\posts\post_2.jpg" />
     <Content Include="Assets\client\images\posts\post_3.jpg" />
@@ -264,6 +266,15 @@
     <Content Include="Assets\client\img\prettyPhoto\default\sprite_y.png" />
     <Content Include="Assets\client\js\jquery-2.0.3.min.js" />
     <Content Include="Assets\client\js\jquery.custom.js" />
+    <Content Include="Assets\client\js\owl-carouel.js" />
+    <Content Include="Assets\client\owl-carousel\AjaxLoader.gif" />
+    <Content Include="Assets\client\owl-carousel\grabbing.png" />
+    <Content Include="Assets\client\owl-carousel\jquery-1.9.1.min.js" />
+    <Content Include="Assets\client\owl-carousel\owl.carousel.css" />
+    <Content Include="Assets\client\owl-carousel\owl.carousel.js" />
+    <Content Include="Assets\client\owl-carousel\owl.carousel.min.js" />
+    <Content Include="Assets\client\owl-carousel\owl.theme.css" />
+    <Content Include="Assets\client\owl-carousel\owl.transitions.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>

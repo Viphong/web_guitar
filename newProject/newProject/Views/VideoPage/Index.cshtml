@@ -13,37 +13,89 @@
 </div>
 <!-- Primary left -->
 <div id="primary-fullwidth">
+
+    @{
+        int j = 1;
+        var url = "";
+    }
+
+
     @foreach (var i in listnewVideo)
     {
-        var url = "/videoDetail/" + @i.MetaTitle + "/" + @i.Mavideo;
+        // cái chỗ đó k quan trọng đâu, thay dung r ma, sao sai ta
+
+
+        if ( j % 4 != 0)
+        {
+            url = "/videoDetail/" + @i.MetaTitle + "/" + @i.Mavideo;
+            //  url = "/videoDetail/" + @i.MetaTitle + "/" + @i.Mavideo;
          <!-- Article vertical -->
-        <div class="article-vertical col3">
-            <!-- Video frame -->
-            <div class="fluid-width-video-wrapper" style="padding-top: 62.5%;">
-                <iframe src="@i.Link"></iframe>
-            </div>
-            <div class="entry-content">
-                <h1 class="entry-title"><a href="@url">@i.Tenvideo</a></h1>
-                <div class="entry-meta">
-                    <div class="review-stars">
-                        <span class="star-full"></span>
-                        <span class="star-full"></span>
-                        <span class="star-full"></span>
-                        <span class="star-full"></span>
-                        <span class="star-full"></span>
-                    </div>
-                    <div class="description-em">
-                        <span class="by-view-number">42</span>
-                        <span class="by-date">3 days ago</span>
-                        <span class="by-comments"><a href="#">4</a></span>
-                    </div>
+
+            <div class="article-vertical col3">
+                <!-- Video frame -->
+                <div class="fluid-width-video-wrapper" style="padding-top: 62.5%;">
+                    <iframe src="@i.Link"></iframe>
                 </div>
-                <span class="format-post"><i class="icon-play-sign"></i></span>
+                <div class="entry-content">
+                    <h1 class="entry-title"><a href="@url">@i.Tenvideo</a></h1>
+                    <div class="entry-meta">
+                        <div class="review-stars">
+                            <span class="star-full"></span>
+                            <span class="star-full"></span>
+                            <span class="star-full"></span>
+                            <span class="star-full"></span>
+                            <span class="star-full"></span>
+                        </div>
+                        <div class="description-em">
+                            <span class="by-view-number">42</span>
+                            <span class="by-date">3 days ago</span>
+                            <span class="by-comments"><a href="#">4</a></span>
+                        </div>
+                    </div>
+                    <span class="format-post"><i class="icon-play-sign"></i></span>
+                </div>
             </div>
-        </div>
+        }
+        else
+        {
+            url = "/videoDetail/" + @i.MetaTitle + "/" + @i.Mavideo;
+            <div class="article-vertical col3 last">
+                <!-- Video frame -->
+                <div class="fluid-width-video-wrapper" style="padding-top: 62.5%;">
+                    <iframe src="@i.Link"></iframe>
+                </div>
+                <div class="entry-content">
+                    <h1 class="entry-title"><a href="@url">@i.Tenvideo</a></h1>
+                    <div class="entry-meta">
+                        <div class="review-stars">
+                            <span class="star-full"></span>
+                            <span class="star-full"></span>
+                            <span class="star-full"></span>
+                            <span class="star-full"></span>
+                            <span class="star-full"></span>
+                        </div>
+                        <div class="description-em">
+                            <span class="by-view-number">42</span>
+                            <span class="by-date">3 days ago</span>
+                            <span class="by-comments"><a href="#">4</a></span>
+                        </div>u
+                    </div>
+                    <span class="format-post"><i class="icon-play-sign"></i></span>
+                </div>
+            </div>
+
+        }
+
+
+        j++;
+
     }
-    
-        <!-- Category -->
+
+
+
+
+    <!-- Article vertical -->
+    @*<!-- Category -->
         @{Html.RenderAction("tunesCategory", "Home");}
 
         <!-- Tags -->
@@ -58,8 +110,8 @@
                 <a href="#">vulputate</a>
                 <a href="#">ipsum</a>
             </div>
-        </div>
-    
+        </div>*@
+
 </div>
 
 <!-- Pagination -->
